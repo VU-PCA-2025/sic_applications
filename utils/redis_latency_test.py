@@ -90,7 +90,7 @@ class RedisLatencyTester:
             print(f"Average latency: {avg_latency:.2f} ms")
 
             # # Store in MySQL (optional)
-            self.store_latency_in_mysql(self.redis_latencies, avg_latency)
+            # self.store_latency_in_mysql(self.redis_latencies, avg_latency)
 
         except redis.ConnectionError as e:
             print(f"Redis connection error: {e}")
