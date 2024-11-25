@@ -26,8 +26,6 @@ face-detection service needs to be running:
 
 imgs_buffer = queue.Queue(maxsize=1)
 faces_buffer = queue.Queue(maxsize=1)
-latency_list = []
-latency_list_num = 0
 
 
 def on_image(image_message: CompressedImageMessage):
