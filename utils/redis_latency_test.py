@@ -99,7 +99,7 @@ class RedisLatencyTester:
         """
         Perform internet speed test
         """
-        st = speedtest.Speedtest()
+        st = speedtest.Speedtest(secure=True)
         servers = st.get_best_server()
         # print(f"Best server details: {servers}")
         print("Testing download speed...")
