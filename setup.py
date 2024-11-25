@@ -6,6 +6,8 @@ setup(
     packages=find_packages(),
     install_requires=[
         "social-interaction-cloud>=2.0.13",
+        "speedtest-cli",
+        "mysql-connector-python",
     ],
     extras_require={
         "dev": [
