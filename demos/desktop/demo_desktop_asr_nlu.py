@@ -12,11 +12,7 @@ from sic_framework.services.openai_whisper_speech_to_text.whisper_speech_to_text
     SICWhisper,
 )
 
-from sic_framework.services.llm.llm import (
-    SICLlm, 
-    LlmConf, 
-    PromptRequest
-)
+
 
 """
 This demo shows how to create a simple pipeline (ASR + NLU) where Whisper transcribes your speech and
@@ -47,34 +43,6 @@ nlu_conf = NLUConf(ontology_path=ontology_path, model_path=model_path)
 nlu = NLU(conf=nlu_conf)
 print("Initiated NLU component!")
 
-# llm = SICLlm(LlmConf(
-#     model="orca-mini-3b-gguf2-q4_0",  # or use "gpt-3.5-turbo" for a cheaper option
-#     system_prompt="You are a helpful assistant to give the user a response given utterance transcript, the intent and slots"
-# ))
-
-# print("Initiating llm component!")
-
-# def test_llm():
-#     # Initialize the LLM component with your configuration
-#     llm_component = SICLlm(LlmConf(
-#         model="orca-mini-3b",  # or use "gpt-3.5-turbo" for a cheaper option
-#         system_prompt="You are a helpful assistant"
-#     ))
-
-#     # Test with a simple prompt
-#     prompt = "What is the capital of France? Please answer in one word."
-#     request = PromptRequest(prompt)
-    
-#     try:
-#         # Send the request and get the response
-#         response = llm_component.send_request(request)
-#         print(f"Prompt: {prompt}")
-#         print(f"Response: {response.response}")
-#     except Exception as e:
-#         print(f"Error occurred: {e}")
-#     finally:
-#         # Clean up
-#         llm_component.stop()
 
 for i in range(10):
     print("..."*10, f"Talk now Round {i}")
