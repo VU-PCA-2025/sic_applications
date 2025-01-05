@@ -52,16 +52,9 @@ for i in range(10):
     # Feed the NLU result to the LLM model to run inference
     # query = f"transcript: {transcript.transcript}\n intent: {nlu_result.intent}\n slots: {nlu_result.slots}"
     # llm_result = llm.request(PromptRequest(query))
-
-    kv_slots = {}
-    for i, slot in enumerate(nlu_result.slots):
-        if slot!='O':
-            kv_slots[f"{slot}"] = transcript.transcript.split()[i]
-    print("*"*10, "Here is the prediction!"*"*10")
     print("Transcript:", transcript.transcript)
-    print("Intent:", nlu_result.intent)
-    print("Slots:\n", kv_slots)
-    print(nlu_result.intent_confidences)
+    print("Intent:", nlu_result.intent, '\t', nlu_result.intent_confidence)
+    print("Slots:\n", nlu_result.slots)
     print("-"*20)
     # print(nlu_result.slot_confidences)
     # print("The LLM response is:", llm_result.response)
